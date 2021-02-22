@@ -7,12 +7,12 @@ main = Blueprint('main', __name__)
 
 
 @main.route('/')
-def main_index():
-    return 'Blueprint Views.py Hello'
+def index():
+    return render_template('pages/home.html')
 
 
-@main.route('/auth', methods=['POST', 'GET'])
-def auth():
+@main.route('/login', methods=['POST', 'GET'])
+def login():
     if request.method == 'POST':
         email = request.form['email']
         user = User(email=email)
@@ -22,6 +22,11 @@ def auth():
         except:
             return 'something went wrong'
 
-    for user in User.query.all():
-        print(user)
-    return render_template('login.html')
+    return render_template('auth/login.html')
+
+@main.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST':
+        return 'you cant register as of now'
+
+    return render_template('auth/register.html')
