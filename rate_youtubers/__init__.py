@@ -3,7 +3,8 @@ from flask.cli import with_appcontext
 import click
 
 from .extensions import db
-from .views import main
+from .views.auth import auth
+from .views.main import main
 
 
 def create_app(config_file='settings.py'):
@@ -13,6 +14,7 @@ def create_app(config_file='settings.py'):
 
     db.init_app(app)
 
+    app.register_blueprint(auth, url_prefix='/auth')
     app.register_blueprint(main)
 
     @click.command(name='create')
