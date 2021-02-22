@@ -6,18 +6,71 @@
   <div class="col s4">
     <h4>Register</h4>
     <form method="POST">
-      <label for="email">Email</label>
+      {{ form.csrf_token }}
+
+      <div class="input-field">
+        {{ form.email(class='validate ' + ('invalid' if form.email.errors|length else 'valid')) }}
+        {{ form.email.label }}
+
+        {% if form.email.errors|length %}
+          <span class="helper-text" data-error="{{ form.email.errors[0] }}"></span>
+        {% endif %}
+      </div>
+
+      <div class="input-field">
+        {{ form.username(class='validate ' + ('invalid' if form.username.errors|length else 'valid')) }}
+        {{ form.username.label }}
+        {% if form.username.errors|length %}
+          <span class="helper-text" data-error="{{ form.username.errors[0] }}"></span>
+        {% endif %}
+      </div>
+      <div class="input-field">
+        {{ form.password(class='validate ' + ('invalid' if form.password.errors|length else 'valid')) }}
+        {{ form.password.label }}
+        {% if form.password.errors|length %}
+          <span class="helper-text" data-error="{{ form.password.errors[0] }}"></span>
+        {% endif %}
+      </div>
+      <div class="input-field">
+        {{ form.confirm_password(class='validate ' + ('invalid' if form.confirm_password.errors|length else 'valid')) }}
+        {{ form.confirm_password.label }}
+        {% if form.confirm_password.errors|length %}
+          <span class="helper-text" data-error="{{ form.confirm_password.errors[0] }}"></span>
+        {% endif %}
+      </div>
+      <!-- {% for error in form.email.errors %}
+        <li style="color: red;">{{ error }}</li>
+      {% endfor %} -->
+      
+
+      <!-- <div class="input-field">
+        {{ form.username.label }}
+        {{ form.username }}
+      </div>
+
+      <div class="input-field">
+        {{ form.password.label }}
+        {{ form.password }}
+      </div>
+
+      <div class="input-field">
+        {{ form.confirm_password.label }}
+        {{ form.confirm_password }}
+      </div> -->
+
+      <!-- <label for="email">Email</label>
       <input name="email" id="email" type="email">
 
       <label for="username">Username</label>
       <input name="username" id="username" type="text">
 
       <label for="password">Password</label>
-      <input name="password" id="password" type="password">
+      <input name="password" id="password" type="password"> -->
 
       <!-- TODO make sure that confirm password doesn't get send -->
-      <label for="confirm">Password</label>
-      <input id="confirm" type="password">
+      <!-- <label for="confirm">Confirm Password</label>
+      <input id="confirm" type="password"> -->
+  
       <button class="waves-effect btn">Submit</button>
     </form>
   </div>

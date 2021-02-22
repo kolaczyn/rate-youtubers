@@ -1,7 +1,8 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, session, redirect, url_for
 
 from .models import User
 from .extensions import db
+from .forms import LoginForm, RegisterForm
 
 main = Blueprint('main', __name__)
 
@@ -24,9 +25,27 @@ def login():
 
     return render_template('auth/login.html')
 
+
 @main.route('/register', methods=['POST', 'GET'])
 def register():
-    if request.method == 'POST':
-        return 'you cant register as of now'
+    form = RegisterForm()
 
-    return render_template('auth/register.html')
+    if form.validate_on_submit():
+        return render_template('auth/register.html', form=form)
+    #     print(form.username.data, form.password.data)
+    #     return render_template('auth/register.html', form=form)
+        # return redirect(url_for('main.login'))
+
+    return render_template('auth/register.html', form=form)
+
+
+@main.route('/admin-panel')
+def admin_panel():
+    users = User.query.all()
+    redirect(url_for('main.login'))
+    return render_template('pages/admin-panel.html', users=users)
+
+
+@main.route('/me')
+def me():
+    return 'you hit me'

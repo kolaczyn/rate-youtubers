@@ -5,6 +5,9 @@
       <li class="{% block nav_home %}{% endblock %}">
         <a href="{{ url_for('main.index') }}">Home</a>
       </li>
+      <li class="{% block nav_admin %}{% endblock %}">
+        <a href="{{ url_for('main.admin_panel') }}">Admin Panel</a>
+      </li>
       <li class="{% block nav_login %}{% endblock %}">
         <a href="{{ url_for('main.login') }}">Login</a>
       </li>
