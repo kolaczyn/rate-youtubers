@@ -1,8 +1,16 @@
 <nav>
-  <h2>Rate Youtubers</h2>
-  <ul>
-    <li><a href="{{ url_for('main.index') }}">Home</a></li>
-    <li><a href="{{ url_for('main.login') }}">Login</a></li>
-    <li><a href="{{ url_for('main.register') }}">Register</a></li>
-  </ul>
+  <div class="nav-wrapper">
+    <a href="{{ url_for('main.index') }}" class="brand-logo">Rate Youtubers</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li class="{% block nav_home %}{% endblock %}">
+        <a href="{{ url_for('main.index') }}">Home</a>
+      </li>
+      <li class="{% block nav_login %}{% endblock %}">
+        <a href="{{ url_for('main.login') }}">Login</a>
+      </li>
+      <li class="{% block nav_register %}{% endblock %}">
+        <a href="{{ url_for('main.register') }}">Register</a>
+      </li>
+    </ul>
+  </div>
 </nav>

@@ -4,15 +4,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
   <title>Rate Youtubers</title>
 </head>
 <body>
-  {% include 'layout/nav.html' %}
-  
-  {% block content %}
-  {% endblock content %}
+  <div class="body-wrapper">
+    {% include 'layout/nav.html' %}
+   
+    <main class="main-wrapper">
+      <div class="container">
+        {% block content %}
+        {% endblock content %}
+      </div>
+    </main>
 
-  {% include 'layout/footer.html' %}
-  
+    {% include 'layout/footer.html' %}
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

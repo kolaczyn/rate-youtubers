@@ -17,9 +17,8 @@ Run the following commands:
 git clone https://github.com/kolaczyn/rate-youtubers
 cd rate-youtubers
 
-pipenv install # I'm not sure if that installs all the dependencies
+pipenv install
 pipenv shell
-touch .env
 
 # now create the .env file
 echo \

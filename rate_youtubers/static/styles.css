@@ -1,0 +1,9 @@
+.body-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-wrapper {
+  flex-grow: 1;
+}

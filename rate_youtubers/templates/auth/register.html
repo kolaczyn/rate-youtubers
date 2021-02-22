@@ -1,10 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Register</h1>
-  <form method="POST">
-    <label for="email">Email</label>
-    <input name="email" id="email" type="email">
-    <button>Submit</button>
-  </form>
+<div class="row">
+  <div class="col s4"></div>
+  <div class="col s4">
+    <h4>Register</h4>
+    <form method="POST">
+      <label for="email">Email</label>
+      <input name="email" id="email" type="email">
+
+      <label for="username">Username</label>
+      <input name="username" id="username" type="text">
+
+      <label for="password">Password</label>
+      <input name="password" id="password" type="password">
+
+      <!-- TODO make sure that confirm password doesn't get send -->
+      <label for="confirm">Password</label>
+      <input id="confirm" type="password">
+      <button class="waves-effect btn">Submit</button>
+    </form>
+  </div>
+  <div class="col s4"></div>
+</div>
 {% endblock content %}
