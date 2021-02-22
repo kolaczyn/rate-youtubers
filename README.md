@@ -28,5 +28,8 @@ FLASK_APP=rate_youtubers
 FLASK_ENV=development" \
 > .env
 
+# initialize the database
+flask create
+
 flask run
 ```
