@@ -20,7 +20,7 @@ cd rate-youtubers
 pipenv install
 pipenv shell
 
-# now create the .env file
+# create .env file
 echo \
 "SECRET_KEY=mysuperdupersecretkey 
 FLASK_APP=rate_youtubers

@@ -2,23 +2,28 @@ from flask import Blueprint, render_template, request, session, redirect, url_fo
 
 from ..models import User
 from ..extensions import db
-from ..forms import RegisterForm
+from ..forms import LoginForm, RegisterForm
 
 auth = Blueprint('auth', __name__)
 
 
 @auth.route('/login', methods=['POST', 'GET'])
 def login():
-    if request.method == 'POST':
-        email = request.form['email']
-        user = User(email=email)
-        try:
-            db.session.add(user)
-            db.session.commit()
-        except:
-            return 'something went wrong'
+    form = LoginForm()
 
-    return render_template('auth/login.html')
+    if form.validate_on_submit():
+        return render_template('auth/login.html', form=form)
+
+    # if request.method == 'POST':
+    #     email = request.form['email']
+    #     user = User(email=email)
+    #     try:
+    #         db.session.add(user)
+    #         db.session.commit()
+    #     except:
+    #         return 'something went wrong'
+
+    return render_template('auth/login.html', form=form)
 
 
 @auth.route('/register', methods=['POST', 'GET'])

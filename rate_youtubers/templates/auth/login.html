@@ -6,10 +6,25 @@
     <div class="col s4">
     <h4>Login</h4>
     <form method="POST">
-      <label for="email">Email</label>
-      <input name="email" id="email" type="email">
-      <label for="password">Password</label>
-      <input name="password" id="password" type="password">
+      {{ form.csrf_token }}
+
+      <div class="input-field">
+        {{ form.email(class='validate ' + ('invalid' if form.email.errors|length else 'valid')) }}
+        {{ form.email.label }}
+
+        {% if form.email.errors|length %}
+          <span class="helper-text" data-error="{{ form.email.errors[0] }}"></span>
+        {% endif %}
+      </div>
+
+      <div class="input-field">
+        {{ form.password(class='validate ' + ('invalid' if form.password.errors|length else 'valid')) }}
+        {{ form.password.label }}
+        {% if form.password.errors|length %}
+          <span class="helper-text" data-error="{{ form.password.errors[0] }}"></span>
+        {% endif %}
+      </div>
+
       <button class="waves-effect btn">Submit</button>
     </form>
     </div>
