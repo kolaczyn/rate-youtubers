@@ -10,6 +10,7 @@
       <th>Id</th>
       <th>Email</th>
       <th>Username</th>
+      <th>Is Admin</th>
     </tr>
   </thead>
   <tbody>
@@ -17,7 +18,8 @@
       <tr>
         <td>{{ user.id }}</td>
         <td>{{ user.email }}</td>
-        <td>null</td>
+        <td>{{ user.username }}</td>
+        <td>No</td>
       </tr>
     {% endfor %}
   </tbody>

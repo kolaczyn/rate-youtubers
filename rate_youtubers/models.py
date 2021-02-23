@@ -10,6 +10,8 @@ from .extensions import db
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(254), unique=True, nullable=False)
+    username = db.Column(db.String(32), unique=True, nullable=False)
+    password = db.Column(db.String(120), nullable=False)
 
     def __repr__(self):
-        return f'User, email:{self.email}'
+        return f'User no. {self.id} | email: {self.email} | username: {self.username}'
