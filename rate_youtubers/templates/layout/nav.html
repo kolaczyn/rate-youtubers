@@ -3,26 +3,18 @@
     <!-- TODO the margin on the logo is a temporary solution, because it akwardly pushes is on mobile -->
     <a href="{{ url_for('main.index') }}" class="brand-logo" style="margin-left: 1.35rem;">Rate Youtubers</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li class="{% block nav_home %}{% endblock %}">
-      <!-- <li class="{% if active_page == 'index' %}active{% endif %}"> -->
+      <li class="{% if active_page == 'index' %}active{% endif %}">
         <a href="{{ url_for('main.index') }}">Home</a>
       </li>
-      <li class="{% block nav_admin %}{% endblock %}">
+      <li class="{% if active_page == 'admin' %}active{% endif %}">
         <a href="{{ url_for('main.admin_panel') }}">Admin Panel</a>
       </li>
-      {% if session %}
-        {{ session.username }}
-        <li>
-          <a href="{{ url_for('auth.logout') }}">Logout</a>
-        </li>
-      {% else %}
-        <li class="{% block nav_login %}{% endblock %}">
+        <li class="{% if active_page == 'login' %}active{% endif %}">
           <a href="{{ url_for('auth.login') }}">Login</a>
         </li>
-        <li class="{% block nav_register %}{% endblock %}">
+        <li class="{% if active_page == 'register' %}active{% endif %}">
           <a href="{{ url_for('auth.register') }}">Register</a>
         </li>
-      {% endif %}
     </ul>
   </div>
 </nav>
