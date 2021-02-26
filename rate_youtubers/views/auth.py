@@ -13,15 +13,11 @@ def login():
     form = LoginForm()
 
     if form.validate_on_submit():
-        print('-0-------------------')
         email = form.email.data
         password = form.password.data
-        print(email, password)
 
         # TODO this looks dumb, surely there's a better way
         user = User.query.filter_by(email=email).first()
-
-        print(user)
 
         # this should probably redirect to the form and give user now found error
         if user is None:
@@ -52,9 +48,6 @@ def register():
         db.session.add(user)
         db.session.commit()
         return redirect('login', 201)
-    #     print(form.username.data, form.password.data)
-    #     return render_template('auth/register.html', form=form)
-        # return redirect(url_for('main.login'))
 
     return render_template('auth/register.html', form=form)
 

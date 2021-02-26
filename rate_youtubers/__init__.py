@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint
+from flask import Flask, Blueprint, request, g, session
 from flask.cli import with_appcontext
 import click
 
@@ -16,6 +16,11 @@ def create_app(config_file='settings.py'):
 
     app.register_blueprint(auth, url_prefix='/auth')
     app.register_blueprint(main)
+
+    @app.before_request
+    def set_context():
+        g.user_id = session.get('user_id')
+        g.username = session.get('username')
 
     @click.command(name='create')
     @with_appcontext

@@ -9,12 +9,28 @@
       <li class="{% if active_page == 'admin' %}active{% endif %}">
         <a href="{{ url_for('main.admin_panel') }}">Admin Panel</a>
       </li>
+      {% if g.user_id %}
+        <li>
+          <a class="dropdown-trigger" href="#!" data-target="account-dropdown">
+            {{ g.username }}
+            <i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
+      {% else %}
         <li class="{% if active_page == 'login' %}active{% endif %}">
           <a href="{{ url_for('auth.login') }}">Login</a>
         </li>
         <li class="{% if active_page == 'register' %}active{% endif %}">
           <a href="{{ url_for('auth.register') }}">Register</a>
         </li>
+      {% endif %}
     </ul>
   </div>
 </nav>
+
+<ul id="account-dropdown" class="dropdown-content">
+  <li><a href="{{ url_for('auth.me') }}">{{ g.username }}</a></li>
+  <li class="divider"></li>
+  <li><a href="dlfaskj">Settings</a></li>
+  <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+</ul>
