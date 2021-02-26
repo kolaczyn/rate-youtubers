@@ -1,10 +1,10 @@
 from .extensions import db
 
 
-# class Youtuber(db.Model):
-#     id = db.Column(db.String(11), unique=True, nullable=False)
-#     name = db.Column(db.String(20), unique=False, nullable=False)
-#     description = db.Column(db.String(1000), unique=False, nullable=True)
+class Youtuber(db.Model):
+    id = db.Column(db.String(24), unique=True, nullable=False, primary_key=True)
+    name = db.Column(db.String(20), unique=False, nullable=False)
+    description = db.Column(db.String(1000), unique=False, nullable=True)
 
 
 class User(db.Model):

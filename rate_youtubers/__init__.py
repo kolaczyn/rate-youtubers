@@ -4,6 +4,7 @@ import click
 
 from .extensions import db
 from .views.auth import auth
+from .views.youtubers import youtubers
 from .views.main import main
 
 
@@ -15,6 +16,7 @@ def create_app(config_file='settings.py'):
     db.init_app(app)
 
     app.register_blueprint(auth, url_prefix='/auth')
+    app.register_blueprint(youtubers, url_prefix='/youtubers')
     app.register_blueprint(main)
 
     @app.before_request

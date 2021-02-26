@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% set active_page = 'youtubers' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col s4"></div>
+    <div class="col s4">
+      <h4>YouTuber Form</h4>
+      <form method="POST">
+        {{ form.csrf_token }}
+
+        <div class="input-field">
+          {{ form.id }}
+          {{ form.id.label }}
+        </div>
+
+        <div class="input-field">
+          {{ form.name }}
+          {{ form.name.label }}
+        </div>
+
+        <div class="input-field">
+          {{ form.description(class='materialize-textarea') }}
+          {{ form.description.label }}
+        </div>
+
+        {% include 'components/submit-btn.html' %}
+      </form>
+    </div>
+    <div class="col s4"></div>
+{% endblock content %}

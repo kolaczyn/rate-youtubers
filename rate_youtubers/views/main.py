@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, g
 
-from ..models import User
+from ..models import User, Youtuber
 
 main = Blueprint('main', __name__)
 
@@ -13,4 +13,5 @@ def index():
 @main.route('/admin-panel')
 def admin_panel():
     users = User.query.all()
-    return render_template('pages/admin-panel.html', users=users)
+    youtubers = Youtuber.query.all()
+    return render_template('pages/admin-panel.html', users=users, youtubers=youtubers)

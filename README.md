@@ -8,6 +8,7 @@ You can rate (almost) any video on YouTube. But you can't really rate YouTubers.
 
 You need to need to have the following pieces of software installed on your system:
 
+- bash
 - git
 - Python 3, at least version 3.6
 - pip
