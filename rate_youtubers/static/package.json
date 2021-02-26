@@ -1,0 +1,13 @@
+{
+  "name": "rate-youtubers",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kolaczyn/rate-youtubers",
+  "author": "Paweł Kołaczyński",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "materialize-css": "^1.0.0-rc.2"
+  }
+}

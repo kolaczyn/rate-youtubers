@@ -19,19 +19,7 @@ Run the following commands:
 git clone https://github.com/kolaczyn/rate-youtubers
 cd rate-youtubers
 
-pipenv install
-pipenv shell
-
-# create .env file
-echo \
-"SECRET_KEY=mysuperdupersecretkey
-FLASK_APP=rate_youtubers
-FLASK_ENV=development" \
-> .env
-
-# initialize the database
-flask create
-
+sh setup.sh
 flask run
 ```
 
