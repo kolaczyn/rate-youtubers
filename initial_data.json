@@ -1,0 +1,37 @@
+{
+  "users": [{
+      "email": "example@gmail.com",
+      "username": "example",
+      "password": "example"
+    },
+    {
+      "email": "google@gmail.com",
+      "username": "DuckDuckGo",
+      "password": "password"
+    },
+    {
+      "email": "john@yahoo.com",
+      "username": "John",
+      "password": "12345678"
+    }
+  ],
+  "youtubers": [{
+      "id": "UCld68syR8Wi-GY_n4CaoJGA",
+      "name": "Brodie Robertson",
+      "description": "lorem ipsum dolor"
+    },
+    {
+      "id": "UC2eYFnH61tmytImy1mTYvhA",
+      "name": "Luke Smith",
+      "description": "Everything you're looking for is here: http://lukesmith.xyz"
+    },
+    {
+      "id": "UC7YOGHUfC1Tb6E4pudI9STA",
+      "name": "Metanl Outlaw",
+      "description": "I make videos about stuff."
+    }
+  ],
+  "reviews": [
+
+  ]
+}

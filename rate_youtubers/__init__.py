@@ -6,6 +6,7 @@ from .extensions import db
 from .views.auth import auth
 from .views.youtubers import youtubers
 from .views.main import main
+from .fill_db_with_data import fill_db
 
 
 def create_app(config_file='settings.py'):
@@ -28,6 +29,7 @@ def create_app(config_file='settings.py'):
     @with_appcontext
     def create():
         db.create_all()
+        fill_db()
 
     app.cli.add_command(create)
 
