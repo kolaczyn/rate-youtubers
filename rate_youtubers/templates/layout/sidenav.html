@@ -1,0 +1,24 @@
+<ul id="slide-out" class="sidenav">
+  <li>
+    <div class="user-view">
+      <a href="{{ url_for('auth.me') }}">
+        <div class="background">
+          <img src="{{ url_for('static', filename='img/sidenav-bg.jpg') }}">
+        </div>
+        <img class="circle" src="{{ url_for('static', filename='img/avatar.jpg') }}">
+        <span class="white-text name">{{ g.username or 'Guest' }}</span>
+        <span class="white-text email">{{ g.email or '' }}</span>
+      </a>
+    </div>
+  </li>
+  <li><a href="{{ url_for('main.index') }}">Home</a></li>
+  <li><a href="{{ url_for('youtubers.create') }}">Youtubers</a></li>
+  <li><a href="{{ url_for('main.admin_panel') }}">Admin Panel</a></li>
+  <li><div class="divider"></div></li>
+  {% if g.user_id %}
+    <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+  {% else %}
+    <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+    <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+  {% endif %}
+</ul>

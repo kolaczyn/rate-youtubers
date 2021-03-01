@@ -1,7 +1,7 @@
 <nav>
   <div class="nav-wrapper">
-    <!-- TODO the margin on the logo is a temporary solution, because it akwardly pushes is on mobile -->
-    <a href="{{ url_for('main.index') }}" class="brand-logo" style="margin-left: 1.35rem;">Rate Youtubers</a>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <a href="{{ url_for('main.index') }}" class="brand-logo">Rate Youtubers</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li class="{% if active_page == 'index' %}active{% endif %}">
         <a href="{{ url_for('main.index') }}">Home</a>

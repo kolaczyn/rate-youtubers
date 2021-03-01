@@ -24,6 +24,7 @@ def create_app(config_file='settings.py'):
     def set_context():
         g.user_id = session.get('user_id')
         g.username = session.get('username')
+        g.email = session.get('email')
 
     @click.command(name='create')
     @with_appcontext

@@ -15,3 +15,8 @@ def admin_panel():
     users = User.query.all()
     youtubers = Youtuber.query.all()
     return render_template('pages/admin-panel.html', users=users, youtubers=youtubers)
+
+
+@main.route('/review')
+def review():
+    return '/review'

@@ -27,6 +27,7 @@ def login():
             session.clear()
             session['user_id'] = user.id
             session['username'] = user.username
+            session['email'] = user.email
             return redirect(url_for('main.index'))
         else:
             return 'incorrect password'
