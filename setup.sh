@@ -17,6 +17,7 @@ if [ $(yarn --version) ]; then
 else
   npm install
 fi
+npm run compile-styles
 cd ../..
 
 # initialize the database

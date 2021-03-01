@@ -2,6 +2,7 @@
 node_modules/
 *.db
 sample-data.txt
+scss/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
