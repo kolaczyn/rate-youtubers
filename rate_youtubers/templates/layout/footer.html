@@ -1,27 +1,64 @@
 <footer class="page-footer">
   <div class="container">
     <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Footer Content</h5>
-        <p class="grey-text text-lighten-4">
-          You can use rows and columns here to organize your footer content.
-        </p>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Site Map</h5>
+        <ul>
+          <li>
+            <a class="grey-text text-lighten-3" href="{{ url_for('main.index')}}">
+              <i class="tiny material-icons">home</i>
+              Home</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="{{ url_for('youtubers.create') }}">
+              <i class="tiny material-icons">rate_review</i>
+              Rate</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="{{ url_for('main.admin_panel')}} ">
+              <i class="tiny material-icons">dashboard</i>
+              Dashboard</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="{{ url_for('auth.me') }}">
+              <i class="tiny material-icons">account_circle</i>
+              Account</a>
+          </li>
+        </ul>
       </div>
       <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
+        <h5 class="white-text">Creator Info</h5>
         <ul>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          <li>
+            <a class="grey-text text-lighten-3" href="mailto:kolaczyn@protonmail.com">
+              <i class="tiny material-icons">mail</i>
+              Email</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" target="_blank" href="https://twitter.com/kolaczyn">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+              Twitter</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" target="_blank" href="https://github.com/kolaczyn">
+              <i class="fa fa-github" aria-hidden="true"></i>
+              GitHub</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" target="_blank" href="https://kolaczyn.com">
+              <i class="tiny material-icons">web</i>
+              Website</a>
+          </li>
         </ul>
       </div>
     </div>
   </div>
   <div class="footer-copyright">
-    <div class="container">
-      © 1889 created by kolaczyn
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-    </div>
+    <div class="container">© {{ now.year }} created by Paweł Kołaczyński</div>
   </div>
 </footer>
+<style>
+  footer i {
+    margin-right: .2rem;
+  }
+</style>

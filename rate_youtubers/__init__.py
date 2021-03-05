@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from flask import Flask, Blueprint, request, g, session
 from flask.cli import with_appcontext
 import click
@@ -25,6 +27,10 @@ def create_app(config_file='settings.py'):
         g.user_id = session.get('user_id')
         g.username = session.get('username')
         g.email = session.get('email')
+
+    @app.context_processor
+    def inject_now():
+        return {'now': datetime.utcnow()}
 
     @click.command(name='create')
     @with_appcontext

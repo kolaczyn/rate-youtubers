@@ -10,6 +10,7 @@
     "compile-styles": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/base.scss css/styles.css"
   },
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "materialize-css": "^1.0.0-rc.2"
   },
