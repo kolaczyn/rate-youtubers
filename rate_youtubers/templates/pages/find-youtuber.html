@@ -5,27 +5,19 @@
   <div class="row">
     <div class="col s4"></div>
     <div class="col s4">
-      <h4>YouTuber Form</h4>
-      <form method="POST">
+      <h4>Find Youtuber</h4>
+      <p>Paste in the the channel you want to rate</p>
+      <form class="youtuberForm" method="POST">
         {{ form.csrf_token }}
 
         <div class="input-field">
-          {{ form.id }}
-          {{ form.id.label }}
-        </div>
-
-        <div class="input-field">
-          {{ form.name }}
-          {{ form.name.label }}
-        </div>
-
-        <div class="input-field">
-          {{ form.description(class='materialize-textarea') }}
-          {{ form.description.label }}
+          {{ form.link }}
+          {{ form.link.label }}
         </div>
 
         {% include 'components/submit-btn.html' %}
       </form>
     </div>
     <div class="col s4"></div>
+  </div>
 {% endblock content %}

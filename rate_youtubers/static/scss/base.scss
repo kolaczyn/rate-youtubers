@@ -1,0 +1,18 @@
+@import '../node_modules/materialize-css/sass/components/color-variables';
+$primary-color: color("blue", "lighten-2") !default;
+$secondary-color: color("yellow", "base") !default;
+@import '../node_modules/materialize-css/sass/materialize';
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.body-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-wrapper {
+  flex-grow: 1;
+}

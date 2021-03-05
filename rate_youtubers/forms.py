@@ -18,6 +18,6 @@ class RegisterForm(FlaskForm):
 
 
 class YoutuberForm(FlaskForm):
-    id = StringField('ID', validators=[InputRequired(), Length(min=24, max=24)])
-    name = StringField('Name', validators=[InputRequired(), Length(max=20)])
-    description = TextAreaField('Description', validators=[InputRequired(), Length(max=1000)])
+    link = StringField(
+        'Link to the channel',
+        validators=[InputRequired()])

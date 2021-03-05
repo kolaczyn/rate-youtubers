@@ -14,13 +14,19 @@ You need to need to have the following pieces of software installed on your syst
 - pip
 - [pipenv](https://pipenv.pypa.io/en/latest/)
 
+You also need a YouTube Data API v3 key. If you don't have one, you can follow [this tutorial](https://youtu.be/th5_9woFJmk).  
+The website should still work without it, but you won't have access to some of the functionality.
+
 Run the following commands:
 
 ```bash
 git clone https://github.com/kolaczyn/rate-youtubers
 cd rate-youtubers
 
-sh setup.sh
+./setup.sh
+# add your YouTube API key
+echo YOUTUBE_API_KEY=paste_your_api_key_here >> .env
+
 flask run
 ```
 
@@ -33,7 +39,6 @@ pipenv shell
 flask run
 ```
 
-
 ## User Stories
 
 1. You can log in
@@ -42,7 +47,6 @@ flask run
 1. You can leave a rating with a message
 1. You can reply to reviews
 1. YouTuber can reply to review to his channel (I'm not sure yet if it's possible)
-
 
 ## Todo
 

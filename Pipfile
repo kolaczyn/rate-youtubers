@@ -9,6 +9,7 @@ flask-sqlalchemy = "*"
 python-dotenv = "*"
 flask-wtf = "*"
 email-validator = "*"
+google-api-python-client = "*"
 
 [dev-packages]
 
